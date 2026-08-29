@@ -28,11 +28,25 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  document.querySelectorAll("[data-scroll]").forEach((button) => {
-    button.addEventListener("click", () => {
-      scrollToSection(button.dataset.scroll);
-    });
+  // NEW PAGE SWITCHING LOGIC:
+document.querySelectorAll("[data-scroll]").forEach((button) => {
+  button.addEventListener("click", () => {
+    // 1. Find the section we are currently in and hide it
+    const currentScreen = button.closest(".screen");
+    if (currentScreen) {
+      currentScreen.classList.remove("active");
+    }
+
+    // 2. Find the next section and show it
+    const targetScreen = document.querySelector(button.dataset.scroll);
+    if (targetScreen) {
+      targetScreen.classList.add("active");
+      // Scroll to the top just in case viewing on a small mobile screen
+      window.scrollTo(0, 0); 
+    }
   });
+});
+
 
   function showToast(message) {
     clearTimeout(toastTimer);
@@ -67,12 +81,14 @@ document.addEventListener("DOMContentLoaded", () => {
     moveNoButton();
   });
 
-  yesBtn.addEventListener("click", () => {
-    afterYes.style.display = "grid";
-    createConfetti();
-    showToast("I knew it! ❤️");
-    setTimeout(() => scrollToSection("#afterYes"), 250);
-  });
+  // UPDATE YOUR yesBtn CLICK LISTENER:
+yesBtn.addEventListener("click", () => {
+  document.getElementById("question").classList.remove("active");
+  afterYes.classList.add("active");
+  createConfetti();
+  showToast("I knew it! ❤️");
+});
+
 
   surpriseBtn.addEventListener("click", () => {
     surprise.classList.remove("hidden");
