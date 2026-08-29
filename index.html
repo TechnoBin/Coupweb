@@ -2,118 +2,487 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+  >
+
   <meta name="theme-color" content="#ff5f8f">
-  <meta name="description" content="A tiny funny and romantic corner of the internet.">
-  <title>Just For You 💗</title>
+
+  <meta
+    name="description"
+    content="A little secret made with love."
+  >
+
+  <title>Just For You ❤️</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+    rel="stylesheet"
+  >
+
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+
+  <!-- Background -->
+  <div class="bg-glow" aria-hidden="true"></div>
   <div class="bg-hearts" aria-hidden="true"></div>
 
-  <main>
-    <section class="screen hero active" id="home">
+  <!-- Main Story -->
+  <main id="story">
+
+    <!-- =========================
+         PASSWORD SCREEN
+    ========================== -->
+    <section
+      class="screen active"
+      id="passwordScreen"
+      aria-labelledby="passwordTitle"
+    >
+
+      <div class="glass-card password-card">
+
+        <div class="lock-icon">🔐</div>
+
+        <span class="eyebrow">
+          A little secret
+        </span>
+
+        <h1 id="passwordTitle">
+          Before we begin...
+        </h1>
+
+        <p class="hero-copy">
+          There's something waiting for you.
+          <br>
+          But first, prove you're the right person. 👀
+        </p>
+
+        <form id="passwordForm" class="password-form">
+
+          <label for="passwordInput" class="sr-only">
+            Enter password
+          </label>
+
+          <div class="input-wrap">
+
+            <span>♡</span>
+
+            <input
+              id="passwordInput"
+              type="password"
+              autocomplete="off"
+              placeholder="Enter the secret password"
+              maxlength="40"
+            >
+
+          </div>
+
+          <button
+            type="submit"
+            class="primary-btn full-btn"
+          >
+            Unlock it <span>→</span>
+          </button>
+
+        </form>
+
+        <p
+          class="password-hint"
+          id="passwordMessage"
+          aria-live="polite"
+        >
+          Hint: it's something only we know. ❤️
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         HOME
+    ========================== -->
+    <section
+      class="screen"
+      id="home"
+      aria-labelledby="homeTitle"
+    >
+
       <div class="glass-card hero-card">
-        <span class="eyebrow">A tiny website for one special person</span>
-        <div class="big-heart" aria-hidden="true">♡</div>
-        <h1>Hey, you.</h1>
-        <p class="hero-copy">I made something small.<br>It may or may not make you smile. 👀</p>
-        <button class="primary-btn" data-scroll="#question">Okay, show me <span>→</span></button>
-        <p class="tiny-note">No pressure. Probably. 😌</p>
-      </div>
-    </section>
 
-    <section class="screen" id="question">
-      <div class="content-card">
-        <span class="eyebrow">Question 01</span>
-        <h2>Do you think you're<br><em>my favourite person?</em></h2>
-        <p class="subtext">Choose carefully. There are consequences. 😂</p>
-
-        <div class="choice-row" id="choiceArea">
-          <button class="primary-btn yes-btn" id="yesBtn">Obviously ❤️</button>
-          <button class="secondary-btn no-btn" id="noBtn">No 😌</button>
+        <div class="big-heart" aria-hidden="true">
+          ♥
         </div>
-        <p class="tease" id="teaseText" aria-live="polite"></p>
+
+        <span class="eyebrow">
+          Welcome, favourite person
+        </span>
+
+        <h1 id="homeTitle">
+          Hey, you.
+        </h1>
+
+        <p class="hero-copy">
+          I made something small.
+          <br>
+          It may or may not make you smile. 👀
+        </p>
+
+        <button
+          class="primary-btn"
+          data-next="question"
+        >
+          Okay, show me <span>→</span>
+        </button>
+
+        <p class="tiny-note">
+          No pressure. Probably. 😌
+        </p>
+
       </div>
+
     </section>
 
-    <section class="screen hidden-section" id="afterYes">
-      <div class="content-card success-card">
-        <div class="success-icon">💗</div>
-        <span class="eyebrow">Correct answer!</span>
-        <h2>See? I knew you<br><em>would choose me.</em></h2>
-        <p class="subtext">Okay okay… now let's get a little serious.</p>
-        <button class="primary-btn" data-scroll="#memories">Continue <span>→</span></button>
+
+    <!-- =========================
+         QUESTION
+    ========================== -->
+    <section
+      class="screen"
+      id="question"
+      aria-labelledby="questionTitle"
+    >
+
+      <div class="glass-card question-card">
+
+        <div class="mini-heart">
+          ♡
+        </div>
+
+        <span class="eyebrow">
+          Question 01
+        </span>
+
+        <h2 id="questionTitle">
+          Do you think you're
+          <br>
+          <em>my favourite person?</em>
+        </h2>
+
+        <p class="subtext">
+          Choose carefully.
+          There are consequences. 😂
+        </p>
+
+        <div
+          class="choice-area"
+          id="choiceArea"
+        >
+
+          <button
+            class="primary-btn yes-btn"
+            id="yesBtn"
+          >
+            Obviously ❤️
+          </button>
+
+          <button
+            class="secondary-btn no-btn"
+            id="noBtn"
+          >
+            No 😌
+          </button>
+
+        </div>
+
+        <p
+          class="tease"
+          id="teaseText"
+          aria-live="polite"
+        ></p>
+
       </div>
+
     </section>
 
-    <section class="screen" id="memories">
+
+    <!-- =========================
+         YES SCREEN
+    ========================== -->
+    <section
+      class="screen"
+      id="afterYes"
+      aria-labelledby="yesTitle"
+    >
+
+      <div class="glass-card success-card">
+
+        <div class="success-icon">
+          💗
+        </div>
+
+        <span class="eyebrow">
+          Correct answer!
+        </span>
+
+        <h2 id="yesTitle">
+          See?
+          <br>
+          <em>I knew you'd choose me.</em>
+        </h2>
+
+        <p class="subtext">
+          Okay okay...
+          now let's get a little serious.
+        </p>
+
+        <button
+          class="primary-btn"
+          data-next="memories"
+        >
+          Continue <span>→</span>
+        </button>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         MEMORIES
+    ========================== -->
+    <section
+      class="screen"
+      id="memories"
+      aria-labelledby="memoriesTitle"
+    >
+
       <div class="content-card wide-card">
-        <span class="eyebrow">Our little things</span>
-        <h2>Some moments<br><em>worth keeping.</em></h2>
+
+        <span class="eyebrow">
+          Our little things
+        </span>
+
+        <h2 id="memoriesTitle">
+          Some moments
+          <br>
+          <em>worth keeping.</em>
+        </h2>
+
+        <p class="subtext">
+          Maybe they're small moments.
+          But somehow, they became special.
+        </p>
+
 
         <div class="memory-grid">
+
           <article class="memory memory-one">
-            <div class="memory-placeholder">📸</div>
-            <div>
-              <span>01</span>
-              <h3>That one day</h3>
-              <p>Replace this with your favourite memory.</p>
+
+            <div class="memory-photo">
+              <span>📸</span>
             </div>
+
+            <span class="memory-number">
+              01
+            </span>
+
+            <h3>
+              That one day
+            </h3>
+
+            <p>
+              One ordinary day that somehow
+              became one of my favourites.
+            </p>
+
           </article>
+
+
           <article class="memory memory-two">
-            <div class="memory-placeholder">✨</div>
-            <div>
-              <span>02</span>
-              <h3>The random moments</h3>
-              <p>The ones that somehow became the best ones.</p>
+
+            <div class="memory-photo">
+              <span>✨</span>
             </div>
+
+            <span class="memory-number">
+              02
+            </span>
+
+            <h3>
+              Random moments
+            </h3>
+
+            <p>
+              The silly conversations,
+              random laughs and everything between.
+            </p>
+
           </article>
+
+
           <article class="memory memory-three">
-            <div class="memory-placeholder">🌙</div>
-            <div>
-              <span>03</span>
-              <h3>Still my favourite</h3>
-              <p>Some people just feel like home.</p>
+
+            <div class="memory-photo">
+              <span>🌙</span>
             </div>
+
+            <span class="memory-number">
+              03
+            </span>
+
+            <h3>
+              Still my favourite
+            </h3>
+
+            <p>
+              Some people just have a way
+              of making everything feel like home.
+            </p>
+
           </article>
+
         </div>
 
-        <button class="primary-btn" data-scroll="#message">One last thing <span>→</span></button>
+
+        <button
+          class="primary-btn"
+          data-next="message"
+        >
+          One last thing <span>→</span>
+        </button>
+
       </div>
+
     </section>
 
-    <section class="screen" id="message">
+
+    <!-- =========================
+         MESSAGE
+    ========================== -->
+    <section
+      class="screen"
+      id="message"
+      aria-labelledby="messageTitle"
+    >
+
       <div class="glass-card final-card">
-        <div class="sparkle">✦</div>
-        <span class="eyebrow">A little message</span>
-        <h2>You're kind of<br><em>my favourite.</em></h2>
+
+        <div class="sparkle">
+          ✦ ♡ ✦
+        </div>
+
+        <span class="eyebrow">
+          A little message
+        </span>
+
+        <h2 id="messageTitle">
+          You're kind of
+          <br>
+          <em>my favourite.</em>
+        </h2>
+
         <p class="letter">
-          Life is made of tiny moments, silly conversations,
-          random laughs and people who make ordinary days feel special.
+          Life is made of tiny moments,
+          silly conversations, random laughs
+          and people who make ordinary days
+          feel special.
+          <br><br>
           Somehow, you're one of those people for me.
         </p>
-        <p class="signature">— someone who likes you a little too much ♡</p>
 
-        <button class="primary-btn surprise-btn" id="surpriseBtn">Open your surprise 💌</button>
-        <div class="surprise hidden" id="surprise" aria-live="polite">
+        <p class="signature">
+          — someone who likes you a little too much ♡
+        </p>
+
+
+        <button
+          class="primary-btn surprise-btn"
+          id="surpriseBtn"
+        >
+          Open your surprise 💌
+        </button>
+
+
+        <!-- Hidden until button click -->
+        <div
+          class="surprise"
+          id="surprise"
+          aria-hidden="true"
+        >
+
+          <div class="surprise-glow"></div>
+
           <div class="surprise-inner">
-            <span>💌</span>
-            <p>Plot twist:</p>
-            <strong>You were the reason I made this whole website. 😭❤️</strong>
+
+            <div class="surprise-heart">
+              💖
+            </div>
+
+            <span class="surprise-label">
+              Plot twist...
+            </span>
+
+            <h3>
+              You were the reason
+              <br>
+              I made this whole website.
+            </h3>
+
+            <p>
+              And if you smiled even once
+              while going through this,
+              then it was completely worth it. 🥹❤️
+            </p>
+
+            <div class="heart-divider">
+              ♡ ♥ ♡
+            </div>
+
           </div>
+
         </div>
+
       </div>
-      <button class="restart-btn" data-scroll="#home">↻ Start again</button>
+
+
+      <button
+        class="restart-btn"
+        id="restartBtn"
+      >
+        ↻ Start again
+      </button>
+
     </section>
+
   </main>
 
-  <div class="toast" id="toast" role="status" aria-live="polite"></div>
-  <div class="confetti-layer" id="confettiLayer" aria-hidden="true"></div>
+
+  <!-- Toast -->
+  <div
+    class="toast"
+    id="toast"
+    role="status"
+    aria-live="polite"
+  ></div>
+
+
+  <!-- Effects -->
+  <div
+    class="confetti-layer"
+    id="confettiLayer"
+    aria-hidden="true"
+  ></div>
+
 
   <script src="script.js"></script>
+
 </body>
 </html>
