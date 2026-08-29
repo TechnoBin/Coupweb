@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#ff5f8f">
+  <meta name="description" content="A tiny funny and romantic corner of the internet.">
+  <title>Just For You 💗</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="bg-hearts" aria-hidden="true"></div>
+
+  <main>
+    <section class="screen hero" id="home">
+      <div class="glass-card hero-card">
+        <span class="eyebrow">A tiny website for one special person</span>
+        <div class="big-heart" aria-hidden="true">♡</div>
+        <h1>Hey, you.</h1>
+        <p class="hero-copy">I made something small.<br>It may or may not make you smile. 👀</p>
+        <button class="primary-btn" data-scroll="#question">Okay, show me <span>→</span></button>
+        <p class="tiny-note">No pressure. Probably. 😌</p>
+      </div>
+    </section>
+
+    <section class="screen" id="question">
+      <div class="content-card">
+        <span class="eyebrow">Question 01</span>
+        <h2>Do you think you're<br><em>my favourite person?</em></h2>
+        <p class="subtext">Choose carefully. There are consequences. 😂</p>
+
+        <div class="choice-row" id="choiceArea">
+          <button class="primary-btn yes-btn" id="yesBtn">Obviously ❤️</button>
+          <button class="secondary-btn no-btn" id="noBtn">No 😌</button>
+        </div>
+        <p class="tease" id="teaseText" aria-live="polite"></p>
+      </div>
+    </section>
+
+    <section class="screen hidden-section" id="afterYes">
+      <div class="content-card success-card">
+        <div class="success-icon">💗</div>
+        <span class="eyebrow">Correct answer!</span>
+        <h2>See? I knew you<br><em>would choose me.</em></h2>
+        <p class="subtext">Okay okay… now let's get a little serious.</p>
+        <button class="primary-btn" data-scroll="#memories">Continue <span>→</span></button>
+      </div>
+    </section>
+
+    <section class="screen" id="memories">
+      <div class="content-card wide-card">
+        <span class="eyebrow">Our little things</span>
+        <h2>Some moments<br><em>worth keeping.</em></h2>
+
+        <div class="memory-grid">
+          <article class="memory memory-one">
+            <div class="memory-placeholder">📸</div>
+            <div>
+              <span>01</span>
+              <h3>That one day</h3>
+              <p>Replace this with your favourite memory.</p>
+            </div>
+          </article>
+          <article class="memory memory-two">
+            <div class="memory-placeholder">✨</div>
+            <div>
+              <span>02</span>
+              <h3>The random moments</h3>
+              <p>The ones that somehow became the best ones.</p>
+            </div>
+          </article>
+          <article class="memory memory-three">
+            <div class="memory-placeholder">🌙</div>
+            <div>
+              <span>03</span>
+              <h3>Still my favourite</h3>
+              <p>Some people just feel like home.</p>
+            </div>
+          </article>
+        </div>
+
+        <button class="primary-btn" data-scroll="#message">One last thing <span>→</span></button>
+      </div>
+    </section>
+
+    <section class="screen" id="message">
+      <div class="glass-card final-card">
+        <div class="sparkle">✦</div>
+        <span class="eyebrow">A little message</span>
+        <h2>You're kind of<br><em>my favourite.</em></h2>
+        <p class="letter">
+          Life is made of tiny moments, silly conversations,
+          random laughs and people who make ordinary days feel special.
+          Somehow, you're one of those people for me.
+        </p>
+        <p class="signature">— someone who likes you a little too much ♡</p>
+
+        <button class="primary-btn surprise-btn" id="surpriseBtn">Open your surprise 💌</button>
+        <div class="surprise hidden" id="surprise" aria-live="polite">
+          <div class="surprise-inner">
+            <span>💌</span>
+            <p>Plot twist:</p>
+            <strong>You were the reason I made this whole website. 😭❤️</strong>
+          </div>
+        </div>
+      </div>
+      <button class="restart-btn" data-scroll="#home">↻ Start again</button>
+    </section>
+  </main>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <div class="confetti-layer" id="confettiLayer" aria-hidden="true"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
